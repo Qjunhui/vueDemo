@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for指令</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <ul>
+            <!-- 
+                key值需要唯一 
+                对于频繁操作的数据，index也不固定！！！
+            -->
+            <li v-for="item of list" :key="item">{{item}}</li>
+            <li v-for="(item,index) of list" :key="index">{{item}}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el : "#root",
+            data : {
+                list : [1,2,3,4,5]
+            }
+        })
+    </script>
+</body>
+</html>

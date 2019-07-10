@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <!-- v-on:click可简写为@click -->>
+        <div @click="handleClick">{{msg}}</div>
+    </div>
+    <script>
+        new Vue({
+            el : "#root",
+            data : {
+                msg : "Hello"
+            },
+            methods : {
+                handleClick : function () {
+                    this.msg = "World";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

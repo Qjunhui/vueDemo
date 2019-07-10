@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性绑定</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <!-- v-bind:可简写为: -->
+        <div :title="'qjh ' + title">HELLO WORLD</div>
+    </div>
+    <script>
+        new Vue({
+            el : "#root",
+            data : {
+                title : "this is hello world!"
+            }
+        })
+    </script>
+</body>
+</html>

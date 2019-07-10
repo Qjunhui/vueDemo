@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向数据绑定</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <input v-model="msg"/>
+        <div>{{msg}}</div>
+    </div>
+    <script>
+        new Vue({
+            el : "#root",
+            data : {
+                msg : "this is hello world!"
+            }
+        })
+    </script>
+</body>
+</html>

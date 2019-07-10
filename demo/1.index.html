@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <!-- 挂载点，模板，实例 -->
+    <!-- 1.插值表达式 -->
+    <div id="root1">
+        <h1>hello {{msg}}</h1>
+    </div>
+     <!-- 2.v-text <h1>Hello</h1>-->
+    <div id="root2">
+        <h1 v-text="number"></h1>
+    </div>
+    <!-- 3.v-html Hello-->
+    <div id="root3">
+        <div v-html="msg"></div>
+    </div>
+    <script>
+        new Vue({
+            el : "#root2",//挂载点
+            //template : "<h1>hello {{msg}}</h1>",//模板:挂载点内部的内容
+            data : {
+                msg : "<h1>Hello</h1>",
+                number : 123
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if、v-show指令</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <!-- 
+        此处也可用v-show
+        区别：v-if是移除该标签；v-show是display：none
+     -->
+    <div id="root">
+        <div v-if="show">hello world</div>
+        <button @click="handleClick">toggle</button>
+    </div>
+    <script>
+        new Vue({
+            el : "#root",
+            data : {
+                show : true
+            },
+            methods : {
+                handleClick : function() {
+                    this.show = !this.show;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

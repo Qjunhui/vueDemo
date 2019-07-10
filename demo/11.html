@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件与实例的关系</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div>
+            <input v-model="inputValue" />
+            <button @click="handleClick">提交</button>
+        </div>
+        <ul>
+            <todo-item 
+                v-for="(item,index) of list" 
+                :key="item"
+                :content="item"
+            >
+            </todo-item>
+        </ul>
+    </div>
+
+    <script>
+        // 每个组件都是Vue的实例！！！！！
+        Vue.component("todo-item",{
+            props : ["content"],
+            template : " <li @click='handleClick'>{{content}}</li>",
+            methods : {//Vue实例上可以写methods方法
+                handleClick : function () {
+                    alert("click");
+                }
+            }
+        })
+        new Vue({
+            el : "#root",
+            data : {
+                inputValue : "",
+                list : []
+            },
+            methods : {
+                handleClick : function() {
+                    this.list.push(this.inputValue);
+                    this.inputValue = "";
+                }
+            }
+        })
+    </script>
+</body>
+</html>
